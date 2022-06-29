@@ -1,3 +1,5 @@
+#완전탐색 - 소수찾기
+
 from itertools import permutations
 
 def checkPrime(n):
