@@ -4,9 +4,9 @@ public class CreateBigNumber {
 
         Solution solution = new Solution();
 
-         System.out.println(solution.solution("1924", 2));
-         System.out.println(solution.solution("1231234", 3));
-         System.out.println(solution.solution("4177252841", 4));
+        System.out.println(solution.solution("1924", 2));
+        System.out.println(solution.solution("1231234", 3));
+        System.out.println(solution.solution("4177252841", 4));
     }
 }
 
