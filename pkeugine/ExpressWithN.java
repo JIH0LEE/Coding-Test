@@ -3,7 +3,9 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
 
-public class Main {
+// 프로그래머스
+// N으로 표현
+public class ExpressWithN {
 
     public static void main(String[] args) {
         Solution solution = new Solution();

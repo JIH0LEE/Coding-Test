@@ -1,5 +1,7 @@
 import java.util.Stack;
 
+// 프로그래머스
+// 큰 수 만들기
 public class CreateBigNumber2 {
 
     public static void main(String[] args) {

@@ -1,3 +1,5 @@
+// 프로그래머스
+// 체육복
 public class PEShirt {
 
     public static void main(String[] args) {

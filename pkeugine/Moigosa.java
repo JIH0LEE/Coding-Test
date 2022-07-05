@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
+// 프로그래머스
+// 모의고사
 public class Moigosa {
 
     public static void main(String[] args) {

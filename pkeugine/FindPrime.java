@@ -1,5 +1,7 @@
 import java.util.*;
 
+// 프로그래머스
+// 소수 찾기
 public class FindPrime {
 
     public static void main(String[] args) {

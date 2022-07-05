@@ -1,5 +1,7 @@
 import java.util.Arrays;
 
+// 프로그래머스
+// 구명보트
 public class LifeBoat {
     public static void main(String[] args) {
         Solution solution = new Solution();

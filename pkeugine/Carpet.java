@@ -1,3 +1,5 @@
+// 프로그래머스
+// 카펫
 public class Carpet {
 
     public static void main(String[] args) {

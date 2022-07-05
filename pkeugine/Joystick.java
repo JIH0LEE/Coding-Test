@@ -1,3 +1,5 @@
+// 프로그래머스
+// 조이스틱
 public class Joystick {
 
     public static void main(String[] args) {
