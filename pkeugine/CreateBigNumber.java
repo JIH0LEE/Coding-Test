@@ -24,7 +24,7 @@ class Solution {
                     index = j + 1;
                 }
             }
-            sb. append(max);
+            sb.append(max);
         }
         return sb.toString();
     }
