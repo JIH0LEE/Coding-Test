@@ -11,93 +11,63 @@ public class Main {
         // 4
         System.out.println(solution.solution(5, 12));
         // 3
-        //System.out.println(solution.solution(2, 11));
+        System.out.println(solution.solution(2, 11));
     }
 }
 
 class Solution {
 
     public int solution(int N, int number) {
-        int answer = 0;
-        List<Set<Integer>> possible = new ArrayList<>();
+        List<Set<Integer>> results = new ArrayList<>();
 
+        int answer = 1;
+        if (N == number) {
+            return answer;
+        }
+        Set<Integer> oneResult = new HashSet<>();
+        oneResult.add(N);
+        results.add(oneResult);
+
+        // answer = 2
+        answer++;
+        Set<Integer> twoResult = new HashSet<>();
+        twoResult.add(N + N);
+        twoResult.add(N * N);
+        // N / N
+        twoResult.add(1);
+        // N - N
+        twoResult.add(0);
+        twoResult.add(Integer.valueOf(String.valueOf(N).repeat(2)));
+        if (twoResult.contains(number)) {
+            return answer;
+        }
+        results.add(twoResult);
+
+        // answer 3 ~ 8
         while (answer < 8) {
             answer++;
-            Set<Integer> results = new HashSet<>();
-            if (answer == 1) {
-                // case: number = N
-                if (number == N) {
-                    return answer;
-                }
 
-                results.add(N);
-            }
-            if (answer == 2) {
-                int temp = N + N;
-                if (temp == number) {
-                    return answer;
-                }
-                results.add(temp);
-
-                temp = N * N;
-                if (temp == number) {
-                    return answer;
-                }
-                results.add(temp);
-
-                temp = 1;
-                if (temp == number) {
-                    return answer;
-                }
-                results.add(temp);
-
-                temp = 0;
-                if (temp == number) {
-                    return answer;
-                }
-                results.add(temp);
-            }
-            if (answer > 2) {
-                for (int i = 0; i <= answer; i++) {
-                    Set<Integer> firstSet = possible.get(i);
-                    Set<Integer> secondSet = possible.get(answer - i);
-
-                    for (int first : firstSet) {
-                        for (int second : secondSet) {
-                            int temp = first + second;
-                            if (temp == number) {
-                                return answer;
-                            }
-                            results.add(temp);
-
-                            temp = first - second;
-                            if (temp == number) {
-                                return answer;
-                            }
-                            results.add(temp);
-
-                            temp = first * second;
-                            if (temp == number) {
-                                return answer;
-                            }
-                            results.add(temp);
-
-                            if (first != 0 && second != 0) {
-                                temp = first / second;
-                                if (temp == number) {
-                                    return answer;
-                                }
-                                results.add(temp);
-                            }
+            Set<Integer> result = new HashSet<>();
+            for (int i = 0; i < answer - 1; i++) {
+                Set<Integer> firstResult = results.get(i);
+                Set<Integer> secondResult = results.get(answer - 2 - i);
+                for (int first : firstResult) {
+                    for (int second : secondResult) {
+                        result.add(first + second);
+                        result.add(first - second);
+                        result.add(first * second);
+                        if (first != 0 && second != 0) {
+                            result.add(first / second);
                         }
                     }
                 }
-                results.add(Integer.valueOf(String.valueOf(N).repeat(answer)));
             }
-            possible.add(results);
-            answer++;
+            result.add(Integer.parseInt(String.valueOf(N).repeat(answer)));
+            if (result.contains(number)) {
+                return answer;
+            }
+            results.add(result);
         }
-
         return -1;
     }
 }
