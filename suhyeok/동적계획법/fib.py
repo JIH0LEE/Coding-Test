@@ -25,5 +25,3 @@ def fibonacci(n):
 # %%
 n = int(input())
 print(fib(n), fibonacci(n))
-
-# %%
