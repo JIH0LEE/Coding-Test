@@ -5,10 +5,12 @@ public class TargetNumber {
     public static void main(String[] args) {
         Solution solution = new Solution();
 
+        // 5
         int[] firstNumbers = {1,1,1,1,1};
         int firstTarget = 3;
         System.out.println(solution.solution(firstNumbers, firstTarget));
 
+        // 2
         int[] secondNumbers = {4,1,2,1};
         int secondTarget = 4;
         System.out.println(solution.solution(secondNumbers, secondTarget));
