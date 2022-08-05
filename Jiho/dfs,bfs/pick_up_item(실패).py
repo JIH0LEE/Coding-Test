@@ -1,7 +1,7 @@
 from collections import deque
 def solution(rectangle, characterX, characterY, itemX, itemY):
     max_axis=50
-    
+    visited=[[False for i in range(max_axis+1)] for j in range(max_axis+1)]
     map=[[-2 for i in range(max_axis+1)] for j in range(max_axis+1)]
     rectangle_idx=0
     for r in rectangle:
@@ -24,13 +24,14 @@ def solution(rectangle, characterX, characterY, itemX, itemY):
     answer = 0
     while queue:
         x,y,cost=queue.popleft()
+        visited[x][y]=True
         if x==itemX and y==itemY:
             answer=cost
             break
         for i in range(4):
             nx=x+dx[i]
             ny=y+dy[i]
-            if 0<=nx<=max_axis and 0<=ny<=max_axis:
+            if 0<=nx<=max_axis and 0<=ny<=max_axis and not visited[nx][ny]:
                 if map[x][y]==0:
                     if map[nx][ny]>=0:
                         queue.append([nx,ny,cost+1])
