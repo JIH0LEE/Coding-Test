@@ -71,7 +71,7 @@ class Solution {
     private void fill(int x1, int y1, int x2, int y2) {
         for (int i = x1; i <= x2; i++) {
             for (int j = y1; j <= y2; j++) {
-                if (map[i][j] == -1) {
+                if (map[i][j] == -2) {
                     continue;
                 }
                 map[i][j] = -2;
@@ -110,7 +110,7 @@ class Solution {
                     if (answer == 0) {
                         answer = map[nx][ny];
                     } else {
-                        answer = Math.min(answer, map[nx][ny]);
+                        answer = map[nx][ny];
                     }
                     continue;
                 }
