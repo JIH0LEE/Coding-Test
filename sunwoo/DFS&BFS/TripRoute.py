@@ -1,4 +1,6 @@
 from collections import defaultdict
+#스택
+# 알파벳은 pop 뒤에서 빠짐 -> sort 사용
 
 def solution(tickets):
     answer = []
