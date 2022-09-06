@@ -33,8 +33,11 @@ def solution(n, k):
     number_list=number.split('0')
     
     # number_list에 ''요소가 있으면 삭제
-    if '' in number_list:
-        number_list.remove('')
+    while True:
+        if '' in number_list:
+            number_list.remove('')
+        else:
+            break
     
     #map을 통하여 문자열을 정수로 변환
     numbers = list(map(int,number_list))
